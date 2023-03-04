@@ -6,7 +6,8 @@ function BasicExample() {
     <Table striped bordered hover>
       <thead className="header-table">
         <tr>
-          <th>Nombre</th>
+          <th>Módulo</th>
+          <th>Semana</th>
           <th>Asistencia 1</th>
           <th>Asistencia 2</th>
           <th>Tareas</th>
@@ -14,7 +15,10 @@ function BasicExample() {
       </thead>
       <tbody>
         <tr>
-          <td>Karelys</td>
+          <td>HTML/CSS</td>
+            <td  class> 
+                    1
+            </td>
             <td  class> 
                 <div class="asistencia1">
                     <select class="form-select" placeholder="Seleccionar">
@@ -56,7 +60,10 @@ function BasicExample() {
             </td>
         </tr>
         <tr>
-          <td>Linda</td>         
+         <td>HTML/CSS</td>
+            <td  class> 
+                    2
+            </td>          
           <td  class> 
                 <div class="asistencia1">
                     <select class="form-select" aria-label="Default select example">
@@ -99,7 +106,10 @@ function BasicExample() {
 
         </tr>
         <tr>
-          <td>Andrea</td>
+         <td>JavaScript I</td>
+            <td  class> 
+                    1
+            </td>
             <td  class> 
                 <div class="asistencia1">
                     <select class="form-select" aria-label="Default select example">
@@ -141,7 +151,10 @@ function BasicExample() {
             </td>
         </tr>
 <tr>
-          <td>Luis</td>          
+         <td>JavaScript I</td>
+            <td  class> 
+                    2
+            </td>         
           <td  class> 
                 <div class="asistencia1">
                     <select class="form-select" aria-label="Default select example">
@@ -184,7 +197,10 @@ function BasicExample() {
 
         </tr>
         <tr>
-          <td>Litzy</td>
+        <td>JavaScript II</td>
+            <td  class> 
+                    1
+            </td>
             <td  class> 
                 <div class="asistencia1">
                     <select class="form-select" aria-label="Default select example">
@@ -226,7 +242,10 @@ function BasicExample() {
             </td>
         </tr>
         <tr>
-          <td>Natalia</td>
+         <td>JavaScript II</td>
+            <td  class> 
+                    2
+            </td>
             <td  class> 
                 <div class="asistencia1">
                     <select class="form-select" aria-label="Default select example">
