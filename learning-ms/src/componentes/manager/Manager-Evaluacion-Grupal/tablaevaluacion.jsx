@@ -7,6 +7,7 @@ function BasicExample() {
       <thead className="header-table">
         <tr>
           <th>Nombre</th>
+          <th>Semana</th>
           <th>Asistencia 1</th>
           <th>Asistencia 2</th>
           <th>Tareas</th>
@@ -15,6 +16,16 @@ function BasicExample() {
       <tbody>
         <tr>
           <td>Karelys</td>
+            <td  class> 
+                <div class="Semana">
+                    <select class="form-select" aria-label="Default select example">
+                    <option value="0"></option>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    </select>
+                </div>
+            </td>
             <td  class> 
                 <div class="asistencia1">
                     <select class="form-select" placeholder="Seleccionar">
@@ -56,7 +67,17 @@ function BasicExample() {
             </td>
         </tr>
         <tr>
-          <td>Linda</td>            
+          <td>Linda</td>
+            <td  class> 
+                <div class="Semana">
+                    <select class="form-select" aria-label="Default select example">
+                    <option value="0"></option>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    </select>
+                </div>
+            </td>           
           <td  class> 
                 <div class="asistencia1">
                     <select class="form-select" aria-label="Default select example">
@@ -101,6 +122,16 @@ function BasicExample() {
         <tr>
           <td>Andrea</td>
             <td  class> 
+                <div class="Semana">
+                    <select class="form-select" aria-label="Default select example">
+                    <option value="0"></option>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    </select>
+                </div>
+            </td>
+            <td  class> 
                 <div class="asistencia1">
                     <select class="form-select" aria-label="Default select example">
                     <option value="0"></option>
@@ -141,7 +172,17 @@ function BasicExample() {
             </td>
         </tr>
 <tr>
-          <td>Luis</td>            
+          <td>Luis</td>  
+            <td  class> 
+                <div class="Semana">
+                    <select class="form-select" aria-label="Default select example">
+                    <option value="0"></option>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    </select>
+                </div>
+            </td>          
           <td  class> 
                 <div class="asistencia1">
                     <select class="form-select" aria-label="Default select example">
@@ -186,6 +227,16 @@ function BasicExample() {
         <tr>
           <td>Litzy</td>
             <td  class> 
+                <div class="Semana">
+                    <select class="form-select" aria-label="Default select example">
+                    <option value="0"></option>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    </select>
+                </div>
+            </td>
+            <td  class> 
                 <div class="asistencia1">
                     <select class="form-select" aria-label="Default select example">
                     <option value="0"></option>
@@ -227,6 +278,16 @@ function BasicExample() {
         </tr>
         <tr>
           <td>Natalia</td>
+            <td  class> 
+                <div class="Semana">
+                    <select class="form-select" aria-label="Default select example">
+                    <option value="0"></option>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    </select>
+                </div>
+            </td>
             <td  class> 
                 <div class="asistencia1">
                     <select class="form-select" aria-label="Default select example">
