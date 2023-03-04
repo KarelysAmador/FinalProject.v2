@@ -36,3 +36,73 @@
     transform: rotate(360deg);
   }
 }
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+body {
+  font-family: 'Jura', sans-serif !important
+}
+
+.cabecera-tabla-alumno-individual {
+  background-color: #15d4be;
+}
+
+.alumno-name-ai {
+  text-align: start;
+}
+
+.alumno-gh-ai {
+  display: flex;
+  margin-top: 04mm;
+}
+
+.container-datos-ai {
+  margin-top: 5%;
+}
+
+.container-data-table-ai {
+  margin-top: 3%;
+}
+.contenidoAlumno {
+  display: flex;
+  
+
+
+}
