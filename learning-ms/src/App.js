@@ -8,15 +8,12 @@ import Table from './componentes/manager/Manager-Evaluacion-Grupal/tablaevaluaci
 import Button from './componentes/manager/Manager-Evaluacion-Grupal/botonguardar.jsx';
 import TypesExample from './componentes/manager/Manager-Evaluacion-Grupal/botonguardar.jsx';
 
-function App() {
+const App = () => {
   return (
     <div className="App">
-     
-     
-     <AlumnoEvalucionMain/>     
-     
+      <LoginMain />
     </div>
   );
-}
+};
 
 export default App;
