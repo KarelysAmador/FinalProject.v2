@@ -1,6 +1,6 @@
 import React from "react";
 import { Container, Form, Button } from "react-bootstrap";
-import logo from "../../utils/LearningPlatform-bg-black.png";
+import logo from "../../utils/LearningPlatform-bg-white.png";
 
 const LoginMain = () => {
   return (
