@@ -106,7 +106,31 @@ body {
 
 .contenidoAlumno {
   display: flex;
+}
 
+.container-login{
+  background-image:url(../src/utils/foto\ proyecto\ copia.jpg);
+  height: 100vh;
+  background-size: cover;
+  background-position: center;
+}
+.formulario-login{
+  width: 30%;
+  
+}
 
+.logo-login{
+  width: 15%;
+}
 
+.container-formulario{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 12%;
+}
+
+.formulario-button-login{
+  background-color: #01F0D5 !important;
+  border: none !important;
 }

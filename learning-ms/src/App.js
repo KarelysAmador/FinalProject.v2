@@ -9,15 +9,13 @@ import Button from './componentes/manager/Manager-Evaluacion-Grupal/botonguardar
 import TypesExample from './componentes/manager/Manager-Evaluacion-Grupal/botonguardar.jsx';
 import ManagerEvaluacionIndividualMain from './componentes/manager/Manager-Evaluacion-Individual/ManagerEvaluacionIndividualMain.jsx';
 
-function App() {
+const App = () => {
   return (
     <div className="App">
-     
-     
-     <ManagerEvaluacionIndividualMain/>     
-     
+      <LoginMain />
+
     </div>
   );
-}
+};
 
 export default App;
