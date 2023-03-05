@@ -1,5 +1,5 @@
 import React from "react";
-import NavbarMain from "../../navbar/NavbarMain";
+import NavbarMain from "../../navbar/NavbarMainA";
 import Table from 'react-bootstrap/Table';
 import Container from 'react-bootstrap/Container';
 

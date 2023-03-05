@@ -25,7 +25,7 @@
 }
 
 .App-link {
-  color: #61dafb;
+  color: #01f1d6;
 }
 
 @keyframes App-logo-spin {
@@ -65,7 +65,7 @@
 }
 
 .App-link {
-  color: #61dafb;
+  color: #01f1d6;
 }
 
 @keyframes App-logo-spin {
@@ -83,7 +83,7 @@ body {
 }
 
 .cabecera-tabla-alumno-individual {
-  background-color: #15d4be;
+  background-color: #01f1d6;
 }
 
 .alumno-name-ai {
@@ -131,6 +131,6 @@ body {
 }
 
 .formulario-button-login{
-  background-color: #01F0D5 !important;
+  background-color: #01f1d6 !important;
   border: none !important;
 }
