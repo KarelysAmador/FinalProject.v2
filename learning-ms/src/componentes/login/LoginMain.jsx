@@ -3,6 +3,7 @@ import { Container, Form, Button } from "react-bootstrap";
 import logo from "../../utils/LearningPlatform-bg-white.png";
 
 const LoginMain = () => {
+
   return (
     <Container fluid className="container-login">
       <Container className="container-formulario">
@@ -33,3 +34,4 @@ const LoginMain = () => {
   );
 };
 export default LoginMain;
+

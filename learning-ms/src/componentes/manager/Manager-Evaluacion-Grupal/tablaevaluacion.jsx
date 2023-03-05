@@ -56,7 +56,7 @@ function BasicExample() {
             </td>
         </tr>
         <tr>
-          <td>Linda</td>            
+          <td>Linda</td>         
           <td  class> 
                 <div class="asistencia1">
                     <select class="form-select" aria-label="Default select example">
@@ -141,7 +141,7 @@ function BasicExample() {
             </td>
         </tr>
 <tr>
-          <td>Luis</td>            
+          <td>Luis</td>          
           <td  class> 
                 <div class="asistencia1">
                     <select class="form-select" aria-label="Default select example">

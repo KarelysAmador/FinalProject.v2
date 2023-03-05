@@ -32,10 +32,12 @@
   from {
     transform: rotate(0deg);
   }
+
   to {
     transform: rotate(360deg);
   }
 }
+
 .App {
   text-align: center;
 }
@@ -91,6 +93,7 @@ body {
 .alumno-gh-ai {
   display: flex;
   margin-top: 04mm;
+  margin-left: 1%;
 }
 
 .container-datos-ai {
@@ -100,6 +103,7 @@ body {
 .container-data-table-ai {
   margin-top: 3%;
 }
+
 .contenidoAlumno {
   display: flex;
 }

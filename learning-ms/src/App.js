@@ -7,11 +7,13 @@ import AutoCloseExample from './componentes/manager/Manager-Evaluacion-Grupal/bo
 import Table from './componentes/manager/Manager-Evaluacion-Grupal/tablaevaluacion.jsx';
 import Button from './componentes/manager/Manager-Evaluacion-Grupal/botonguardar.jsx';
 import TypesExample from './componentes/manager/Manager-Evaluacion-Grupal/botonguardar.jsx';
+import ManagerEvaluacionIndividualMain from './componentes/manager/Manager-Evaluacion-Individual/ManagerEvaluacionIndividualMain.jsx';
 
 const App = () => {
   return (
     <div className="App">
       <LoginMain />
+
     </div>
   );
 };
