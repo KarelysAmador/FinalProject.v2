@@ -1,6 +1,7 @@
 const pool = require("../db");
 const bcrypt = require("bcrypt");
 const jwtGenerator = require("../utils/jwtGenerator");
+const { request } = require("express");
 
 // SQL
 const get_Usuario = "SELECT * FROM usuario";
@@ -12,6 +13,15 @@ const inserAlumno =
   "INSERT INTO alumno (nombre_alumno, apellido_alumno, nro_identif, dir_email, dir_github, telefono, nacionalidad, fecha_nac, grupo_id, estado, password ) VALUES ($1 ,$2 ,$3 , $4, $5, $6, $7, $8, $9, $10, $11) RETURNING *";
 const insertusuario =
   "INSERT INTO usuario (email,password,tipo_usuario) VALUES ($1 ,$2 ,$3)RETURNING *";
+const get_evaluacion = "select  nombre_completo, status_asist1, status_asist2, status_tarea \
+from grupo g \
+join modulo m on m.curso_id = g.curso_id \
+join evaluacion e on e.modulo_id = m.id \
+join alumno a ON a.id = e.alumno_id and a.codigo_grupo = g.codigo_grupo \
+where g.codigo_grupo = $1 and m.id =$2 and e.semana = $3";
+const insert_evaluacion =
+  "INSERT INTO evaluacion (alumno_id, modulo_id, semana , status_tarea, status_asist1, status_asist2) VALUES ($1 ,$2 ,$3, $4 ,$5 , $6)RETURNING *";
+
 const getUsuario = async (req, res) => {
   try {
     await pool.query(get_Usuario, (error, result) => {
@@ -152,6 +162,46 @@ const login = async (req, res) => {
   }
 };
 
+const getEvaluacion = async (req, res) => {
+  try {
+    let codigoGrupo= req.query.grupo
+    let moduloId= req.query.moduloId
+    let semana= req.query.semana
+
+    await pool.query(get_evaluacion, [codigoGrupo, moduloId, semana],(error, result) => {
+      console.log(codigoGrupo);
+      res.json(result.rows);
+    });
+  } catch (error) {
+    res.json({ error: error.message });
+  }
+};
+async function crearevaluacion(req, res) {
+  const {
+    alumno_id,
+    modulo_id,
+    semana,
+    status_tarea,
+    status_asist1,
+    status_asist2,
+  } = req.body;
+  console.log(req.body);
+  try {
+    let nuevaevaluacion = await pool.query(insert_evaluacion, [
+      alumno_id,
+      modulo_id,
+      semana,
+      status_tarea,
+      status_asist1,
+      status_asist2,
+    ]);
+    return res.status(201).json("ok");
+  } catch (error) {
+    console.error(error.message);
+    res.status(400).json(`this  already exist!`);
+  }
+}
+
 module.exports = {
   getAll,
   createAlumno,
@@ -161,4 +211,6 @@ module.exports = {
   getSemanas,
   login,
   getUsuario,
+  getEvaluacion,
+  crearevaluacion,
 };
