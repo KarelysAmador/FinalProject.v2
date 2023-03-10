@@ -6,6 +6,7 @@ const { request } = require("express");
 // SQL
 const get_Usuario = "SELECT * FROM usuario";
 const get_Alumnos = "SELECT * FROM alumno";
+const get_Alumnosid = "select * from alumno where id= $1";
 const get_Modulos = "select * from modulo";
 const get_Grupos = "select * from grupo";
 const get_semanas = "select  nombre_modulo, total_semanas from modulo m";
@@ -13,12 +14,23 @@ const inserAlumno =
   "INSERT INTO alumno (nombre_alumno, apellido_alumno, nro_identif, dir_email, dir_github, telefono, nacionalidad, fecha_nac, grupo_id, estado, password ) VALUES ($1 ,$2 ,$3 , $4, $5, $6, $7, $8, $9, $10, $11) RETURNING *";
 const insertusuario =
   "INSERT INTO usuario (email,password,tipo_usuario) VALUES ($1 ,$2 ,$3)RETURNING *";
-const get_evaluacion = "select  nombre_completo, status_asist1, status_asist2, status_tarea \
+const get_evaluacion =
+  " select alumno_id, modulo_id, semana, nombre_completo, status_asist1, status_asist2, status_tarea \
 from grupo g \
 join modulo m on m.curso_id = g.curso_id \
 join evaluacion e on e.modulo_id = m.id \
 join alumno a ON a.id = e.alumno_id and a.codigo_grupo = g.codigo_grupo \
 where g.codigo_grupo = $1 and m.id =$2 and e.semana = $3";
+const get_evaluacionIndividual =
+  " select alumno_id, modulo_id, semana, nombre_completo, status_asist1, status_asist2, status_tarea \
+from grupo g \
+join modulo m on m.curso_id = g.curso_id \
+join evaluacion e on e.modulo_id = m.id \
+join alumno a ON a.id = e.alumno_id and a.codigo_grupo = g.codigo_grupo \
+where a.id= $1";
+
+
+
 const insert_evaluacion =
   "INSERT INTO evaluacion (alumno_id, modulo_id, semana , status_tarea, status_asist1, status_asist2) VALUES ($1 ,$2 ,$3, $4 ,$5 , $6)RETURNING *";
 
@@ -32,7 +44,7 @@ const getUsuario = async (req, res) => {
   }
 };
 
-const getAll = async (req, res) => {
+const getalumnosAll = async (req, res) => {
   try {
     await pool.query(get_Alumnos, (error, result) => {
       res.json(result.rows);
@@ -41,7 +53,19 @@ const getAll = async (req, res) => {
     res.json({ error: error.message });
   }
 };
-
+const getAlumnosId = async (req, res) => {
+  const userId = req.params.id;
+  try {
+    //const user = await User.findById(userId);
+    //res.json(user);
+    pool.query(get_Alumnosid,[userId], (error, result) => {
+      res.json(result.rows);
+    });
+  } catch (error) {
+    console.error(error);
+    res.json({ error: error.message });
+  }
+};
 const getModulos = async (req, res) => {
   try {
     await pool.query(get_Modulos, (error, result) => {
@@ -164,18 +188,22 @@ const login = async (req, res) => {
 
 const getEvaluacion = async (req, res) => {
   try {
-    let codigoGrupo= req.query.grupo
-    let moduloId= req.query.moduloId
-    let semana= req.query.semana
-
-    await pool.query(get_evaluacion, [codigoGrupo, moduloId, semana],(error, result) => {
-      console.log(codigoGrupo);
-      res.json(result.rows);
-    });
+    let codigoGrupo = req.query.grupo;
+    let moduloId = req.query.moduloId;
+    let semana = req.query.semana;
+    await pool.query(
+      get_evaluacion,
+      [codigoGrupo, moduloId, semana],
+      (error, result) => {
+        res.json(result.rows);
+      }
+    );
   } catch (error) {
     res.json({ error: error.message });
   }
 };
+
+
 async function crearevaluacion(req, res) {
   const {
     alumno_id,
@@ -203,7 +231,8 @@ async function crearevaluacion(req, res) {
 }
 
 module.exports = {
-  getAll,
+  getalumnosAll,
+  getAlumnosId,
   createAlumno,
   crearUsuario,
   getModulos,
@@ -212,5 +241,7 @@ module.exports = {
   login,
   getUsuario,
   getEvaluacion,
+  //getEvaluacionIndividual,
   crearevaluacion,
+
 };

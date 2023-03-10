@@ -1,6 +1,7 @@
 const { Router } = require("express");
 const {
-  getAll,
+  getalumnosAll,
+  getAlumnosId,
   getModulos,
   getGrupos,
   getSemanas,
@@ -9,16 +10,19 @@ const {
   login,
   getUsuario,
   getEvaluacion,
+  getEvaluacionIndividual,
   crearevaluacion,
 } = require("../controllers/controllers");
 
 const router = Router();
 router.get("/usuarios", getUsuario);
-router.get("/alumnos", getAll);
+router.get("/alumnos", getalumnosAll);
+router.get("/alumnos/:id", getAlumnosId);
 router.get("/modulos", getModulos);
 router.get("/grupos", getGrupos);
 router.get("/semanas", getSemanas);
 router.get("/evaluacion", getEvaluacion);
+//router.get("/evaluacion/:id", getEvaluacionIndividual);
 router.post("/registro", createAlumno);
 router.post("/registroUsuario", crearUsuario);
 router.post("/login", login);
